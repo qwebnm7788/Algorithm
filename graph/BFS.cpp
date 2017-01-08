@@ -115,7 +115,7 @@ void bfs2(int start, vector<int>& distance, vector<int>& parent) {
 	//방문예정 리스트
 	queue<int> q;
 	distance[start] = 0;		//시작정점까지의 거리는 0 이겠죵
-	parent[start] = start;			//시작점을 루트로 하는 bfs spanning tree 형성
+	parent[start] = start;			//시작점을 루트로 하는 bfs spanning tree 형성 트리는 서로 "하나"의 간선으로만 이루어 지므로 이런식으로 저장이 가능하다.
 	q.push(start);
 
 	while (!q.empty()) {
@@ -128,7 +128,7 @@ void bfs2(int start, vector<int>& distance, vector<int>& parent) {
 
 			if (distance[there] == -1) {
 				q.push(there);
-				distance[there] = distance[here] + 1;		//여기선 간선에 가중치가 없어서 그냥 1로 두었다. (몇 level을 거치는지 체크)
+				distance[there] = distance[here] + 1;		//여기선 간선에 가중치가 없어서 그냥 1로 두었다. (몇 level을 거치는지 체크) 그래서 값을 보면 최단거리를 알 수 있도록
 				parent[there] = here;		//here이 there의 부모
 			}
 		}

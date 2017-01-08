@@ -1,3 +1,5 @@
+
+
 //2-SAT 함의 그래프 생성 예시
 #include <iostream>
 #include <vector>
